@@ -4,7 +4,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -21,7 +20,6 @@ public class Main {
                 .filter(number -> number % 2 == 0)
                 .forEach(System.out::println);
 
-
         numbers.stream()
                 .map(number -> number * 2)
                 .forEach(System.out::println);
@@ -30,13 +28,13 @@ public class Main {
 
         List<Integer> sortedNumbers = numbers.stream()
                 .sorted()
-                //.toList();
                 .collect(Collectors.toList());
 
         System.out.println(sortedNumbers);
 
         Integer sum = numbers.stream()
                         .reduce(0, Integer::sum);
+
         System.out.println(sum);
 
         // Bonusaufgabe
@@ -53,8 +51,5 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
-
-
 }
